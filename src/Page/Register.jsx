@@ -8,8 +8,8 @@ const Register = () => {
     backgroundColor:"#3F51B5"
   }
   return (
-    <div className=' flex flex-col items-center justify-center px-4 py-6 bg-white rounded-2xl shadow-lg w-full max-w-md mx-auto my-3'>
-    <div className='w-full max-w-md bg-white text-slate-800  rounded-3xl p-6 shadow-lg '>
+    <div className=' flex flex-col items-center justify-center px-4 py-6 bg-white rounded-2xl  w-full max-w-md mx-auto my-6'>
+    <div className='w-full max-w-md bg-white text-slate-800  rounded-3xl p-6  '>
       <div className='flex justify-center'>
       <div className=' bg-white rounded-4xl border-2 border-black overflow-hidden'>
         <button className=' rounded-3xl py-2 px-6 cursor-pointer'

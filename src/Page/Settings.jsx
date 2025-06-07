@@ -31,7 +31,7 @@ const Settings = () => {
   }
   console.log("User in settings:", user);
   return (
-    <div className={`${bg}  max-w-xl mx-auto mt-10 rounded-2xl shadow-lg p-6 transition-all duration-300`}>
+    <div className={`${bg} w-full  mx-auto my-10 rounded-2xl shadow-lg p-6 transition-all duration-300`}>
       <div className='flex items-center justify-between text-white'>
         <p className={color}>Toggle Theme:</p>
         <button onClick={()=>dispatch(themeToggle())}

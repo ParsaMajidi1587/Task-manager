@@ -8,21 +8,21 @@ export const Nav = () => {
     <div className='flex  top-0 left-0 w-full px-3 gap-8 items-center h-20 bg-indigo-700 md:text-lg'>
         <NavLink to="/"
          style={({ isActive }) => ({
-        color: isActive ? 'white' : 'black',
+        color: isActive ? 'gray' : 'white',
         padding: '5px',
         borderBottom:isActive?"solid white 2px":null,
     })}
         >Home</NavLink>
         <NavLink to="dashboard"
          style={({ isActive }) => ({
-        color: isActive ? 'white' : 'black',
+        color: isActive ? 'gray' : 'white',
         padding: '5px',
         borderBottom:isActive?"solid white 2px":null,
     })}
         >Dashboard</NavLink>
         <NavLink to="register"
          style={({ isActive }) => ({
-        color: isActive ? 'white' : 'black',
+        color: isActive ? 'gray' : 'white',
         padding: '5px',
         borderBottom:isActive?"solid white 2px":null,
     })}

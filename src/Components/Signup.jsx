@@ -42,7 +42,7 @@ const Signup = () => {
     })
   return (
     <div>
-        <form onSubmit={formik.handleSubmit} className='flex  flex-col gap-4 sm:px-1 my-4'>
+        <form onSubmit={formik.handleSubmit} className='flex  flex-col gap-4 sm:px-1 my-6'>
             <h1 className='text-3xl text-center my-2'>Sign Up</h1>
             <div className='grid sm:grid-cols-2  gap-4'>
             <input
