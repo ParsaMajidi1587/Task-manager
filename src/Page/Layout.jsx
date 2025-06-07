@@ -6,9 +6,9 @@ const Layout = () => {
   const theme = useSelector(state => state.theme.mode)
   const bg = theme ==="dark" ?'bg-black text-white' : 'bg-white text-black'
   return (
-    <div className={`${bg} flex flex-col min-h-screen transition-all duration-300`}>
+    <div className={`${bg} flex flex-col sm:min-h-screen  bg-red-500 transition-all duration-300`}>
       <Nav/>
-      <main className=' flex-grow'>
+      <main className='flex-grow'>
       <Outlet/>
     </main>
     <Footer/>    

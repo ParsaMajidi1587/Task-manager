@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 const SubHeader = () => {
   return (
-    <div className='flex pl-2 pb-2 items-center gap-6 text-lg bg-[#f74c06]'>
+    <div className='flex pl-2 pb-2 items-center gap-6 text-lg  bg-indigo-700 '>
         <NavLink to="/dashboard" end  
            style={({ isActive }) => ({
         color: isActive ? 'white' : 'black',

@@ -42,18 +42,18 @@ const Signup = () => {
     })
   return (
     <div>
-        <form onSubmit={formik.handleSubmit} className='flex  flex-col gap-4 px-3 my-4'>
+        <form onSubmit={formik.handleSubmit} className='flex  flex-col gap-4 sm:px-1 my-4'>
             <h1 className='text-3xl text-center my-2'>Sign Up</h1>
-            <div className='grid grid-cols-2  gap-2'>
+            <div className='grid sm:grid-cols-2  gap-4'>
             <input
               name='name'
               value={formik.values.name}
               onChange={formik.handleChange}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:black"
+              className="w-full border border-gray-400 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:black"
               placeholder="Enter your Name"
             />
                <input
-               className="w-full border  border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:black"
+               className="w-full border  border-gray-400 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:black"
                placeholder="Email"
                value={formik.values.email}
                onChange={formik.handleChange}
@@ -70,7 +70,7 @@ const Signup = () => {
               name='password'
               value={formik.values.password}
               onChange={formik.handleChange}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:black"
+              className="w-full border border-gray-400 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:black"
               placeholder="Password"
             />
              { formik.touched.password && formik.errors.password && (
@@ -80,14 +80,14 @@ const Signup = () => {
               name='repeatpassword'
               value={formik.values.repeatpassword}
               onChange={formik.handleChange}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:black"
+              className="w-full border border-gray-400 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:black"
               placeholder="Repeat Password"
             />
              { formik.touched.repeatpassword && formik.errors.repeatpassword && (
               <label className="block  text-red-500 text-sm font-medium">{formik.errors.repeatpassword}</label>
               )}
             <button type='submit'
-             className="w-full bg-[#f74c06] text-white font-semibold py-2 px-4 rounded-md transition">submit</button>
+             className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition">submit</button>
             {isLoading ? <p>Loading...</p>:null}
             {isSuccess ? <p>the Signup was successful</p>:null}
             {isError? <p>the Signup was failed</p>:null}

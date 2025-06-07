@@ -5,7 +5,7 @@ export const Nav = () => {
     border:"solid black 1px"
   }
   return (
-    <div className='flex  top-0 left-0 w-full px-3 gap-8 items-center h-20 bg-[#f74c06] md:text-lg'>
+    <div className='flex  top-0 left-0 w-full px-3 gap-8 items-center h-20 bg-indigo-700 md:text-lg'>
         <NavLink to="/"
          style={({ isActive }) => ({
         color: isActive ? 'white' : 'black',

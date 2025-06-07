@@ -34,7 +34,7 @@ const Login = () => {
     }
   });
   return (
-    <div>
+    <div className=''>
         <form onSubmit={formik.handleSubmit} className='flex flex-col gap-6 my-6'>
             <h1 className='text-3xl text-center'>Login</h1>
              {loginError && (
@@ -61,7 +61,7 @@ const Login = () => {
               <label className="block mb-1 text-red-500 text-sm font-medium">{formik.errors.password}</label>
               )}
             <button
-            className="w-full bg-[#f74c06]  text-white font-semibold py-2 px-4 rounded-md transition"
+            className="w-full bg-indigo-600 hover:bg-indigo-700  text-white font-semibold py-2 px-4 rounded-md transition"
             type='submit'
             >submit</button>
         </form>
