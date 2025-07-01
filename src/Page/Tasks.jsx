@@ -2,11 +2,15 @@ import React from 'react'
 import * as Yup from "yup"
 import {useFormik} from "formik"
 import { useGetTodosQuery ,useAddTodoMutation ,useDeleteTodoMutation} from '../todosApi'
+import { Link, useLocation } from 'react-router-dom'
 const Tasks = () => {
   const user = JSON.parse(localStorage.getItem("user"))
   const {data : todos , isLoading , error}=useGetTodosQuery(user?.id)
   const [addTodo] = useAddTodoMutation()
   const [deleteTodo]= useDeleteTodoMutation()
+  const location = useLocation()
+  
+  
   const validationSchema = Yup.object({
     task:Yup.string().required('please enter your todos!!!').min(4,"your todos are short!")
   })
@@ -47,11 +51,13 @@ const Tasks = () => {
       <div className="w-full max-w-md mx-auto flex flex-col gap-4 bg-white rounded-2xl mt-6">
         {todos?.map((todo) => (
           <div key={todo.id} className='flex justify-between p-4'>
+            <Link to={`${todo.id}`} state={{backgroundLocation: location}}>
           <h1 className='text-base sm:text-lg text-slate-800 font-medium'>
             {todo.task}
           </h1>
+          </Link>
              <button onClick={()=> deleteTodo(todo.id)}
-             className=' bg-red-500 hover:bg-red-600 text-white text-sm px-4 py-1.5 rounded-lg transition'>Delete</button>
+             className=' bg-red-500 hover:bg-red-600 cursor-pointer text-white text-sm px-4 py-1.5 rounded-lg transition'>Delete</button>
           </div>
         ))}
       </div>

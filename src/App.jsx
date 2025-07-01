@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter , Route , Routes } from 'react-router-dom'
+import { BrowserRouter , Route , Routes, useLocation } from 'react-router-dom'
 import Home from "./Page/Home"
 import Dashboard from "./Page/Dashboard"
 import Layout from "./Page/Layout"
@@ -9,14 +9,14 @@ import Settings from "./Page/Settings"
 import Register from "./Page/Register"
 import GuestOnly from "./Components/GuestOnly"
 import { useSelector } from 'react-redux'
+import PopUp from './Components/PopUp'
 function App() {
-  console.log(useSelector(state => state.auth));
-
-
+  const location = useLocation()
+  const state = location.state
+  const background = state?.backgroundLocation || location
   return (
     <>
-    <BrowserRouter>
-          <Routes>
+          <Routes location={background}>
              <Route path='/' element={<Layout/>}>
                 <Route index element={<Home/>}/>
                 <Route path='dashboard' element={
@@ -34,7 +34,9 @@ function App() {
                 }/>
              </Route>
           </Routes>
-        </BrowserRouter>
+         { state?.backgroundLocation && ( <Routes>
+            <Route path='dashboard/:id' element={<PopUp/>}/>
+          </Routes>)}
     </>
   )
 }

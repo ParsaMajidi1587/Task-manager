@@ -23,10 +23,13 @@ export const todoApi = createApi({
         method: "DELETE"
       }),
       invalidatesTags:['Todos']
-    })
+    }),
+      getTaskById:builder.query({
+        query:(id)=>`tasks/${id}`
+      })
   })
 })
 
 
 
-export const {useGetTodosQuery , useAddTodoMutation , useDeleteTodoMutation} = todoApi
+export const {useGetTodosQuery , useAddTodoMutation , useDeleteTodoMutation , useGetTaskByIdQuery} = todoApi
